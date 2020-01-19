@@ -1,0 +1,22 @@
+version: '3'
+services:
+  react-360:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: tail -f /dev/null
+    working_dir: /app
+    user: "${UID}:${GID}"
+    volumes:
+      - .:/app
+
+  yarn:
+    image: node:13-alpine3.10
+    command: tail -f /dev/null
+    working_dir: /app
+    user: "${UID}:${GID}"
+    volumes:
+      - .:/app
+
+volumes:
+  yarn:
