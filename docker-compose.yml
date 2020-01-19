@@ -10,11 +10,10 @@ services:
     volumes:
       - .:/app
 
-  yarn:
-    image: node:13-alpine3.10
+  node:
+    image: node:12
     command: tail -f /dev/null
     working_dir: /app
-    user: "${UID}:${GID}"
     volumes:
       - .:/app
 
